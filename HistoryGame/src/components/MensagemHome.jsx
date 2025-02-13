@@ -19,6 +19,12 @@ function MensagemHome() {
 const [emojiRetirado, setEmojiRetirado] = useState('')
 const [emojiGuardado, setEmojiGuardado] = useState([])
 
+function limparHistória() {
+  setEmojiGuardado([])
+}
+
+
+
 
 function rolarDados() {
   
@@ -48,8 +54,8 @@ function rolarDados() {
             <div className="botao">
                 <p>{emojiGuardado && emojiGuardado}</p>
                 <button className='botaoRolarDados' onClick={rolarDados}>Jogar Dado</button>
-                <p className='botaoRolarDados'>{ i === 9 && emojiGuardado  }</p>
             </div>
+                <p className='botaoRolarDados' onClick={limparHistória}>Apagar História</p>
         </div>
         
     </div>
